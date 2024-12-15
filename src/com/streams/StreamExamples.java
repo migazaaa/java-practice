@@ -1,6 +1,5 @@
 package com.streams;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,5 +55,14 @@ public class StreamExamples {
                 .distinct()
                 .collect(Collectors.toList());
         System.out.println(distinctNumbers);
+    }
+
+    public static void countStringsStartingWithSpecificLetter(){
+        List<String> colors = Arrays.asList("Red", "Green", "Blue", "Pink", "Brown");
+        char startingLetter = 'B';
+        long counter = colors.stream()
+                .filter(color -> color.startsWith(String.valueOf(startingLetter)))
+                .count();
+        System.out.println(counter);
     }
 }
