@@ -1,6 +1,7 @@
 package com.streams;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,5 +65,21 @@ public class StreamExamples {
                 .filter(color -> color.startsWith(String.valueOf(startingLetter)))
                 .count();
         System.out.println(counter);
+    }
+
+    public static void sortListOfStringsInAscendingOrder(){
+        List<String> colors = Arrays.asList("Red", "Green", "Blue", "Pink", "Brown");
+        List<String> ascendingOrder = colors.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println(ascendingOrder);
+    }
+
+    public static void sortListOfStringsInDescendingOrder(){
+        List<String> colors = Arrays.asList("Red", "Green", "Blue", "Pink", "Brown");
+        List<String> descendingOrder = colors.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        System.out.println(descendingOrder);
     }
 }
