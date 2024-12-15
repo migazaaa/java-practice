@@ -1,1 +1,2 @@
-This repository is for Java practice exercises.
+# java-practice
+java coding practice repository
