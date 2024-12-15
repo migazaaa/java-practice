@@ -49,4 +49,12 @@ public class StreamExamples {
                 .sum();
         System.out.println(sumOfOdd);
     }
+
+    public static void removeDuplicateElementsFromList(){
+        List<Integer> numbers = Arrays.asList(10, 23, 22, 23, 24, 24, 33, 15, 26, 15);
+        List<Integer> distinctNumbers = numbers.stream()
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(distinctNumbers);
+    }
 }
