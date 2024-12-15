@@ -1,5 +1,6 @@
 package com.streams;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,5 +30,23 @@ public class StreamExamples {
                 .map(String::toLowerCase)
                 .collect(Collectors.toList());
         System.out.println(lowerCaseStrings);
+    }
+
+    public static void sumOfEvenNumbers(){
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        int sumOfEven = numbers.stream()
+                .filter(num -> num % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println(sumOfEven);
+    }
+
+    public static void sumOfOddNumbers(){
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        int sumOfOdd = numbers.stream()
+                .filter(num -> num % 2 != 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println(sumOfOdd);
     }
 }
