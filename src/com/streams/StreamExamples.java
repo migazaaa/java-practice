@@ -2,6 +2,7 @@ package com.streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamExamples {
 
@@ -12,5 +13,21 @@ public class StreamExamples {
                 .average()
                 .orElse(0.0);
         System.out.println(average);
+    }
+
+    public static void convertStringToUpperCase(){
+        List<String> colors = Arrays.asList("RED", "grEEn", "white", "Orange", "pink");
+        List<String> upperCaseStrings = colors.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+        System.out.println(upperCaseStrings);
+    }
+
+    public static void convertStringToLowerCase(){
+        List<String> colors = Arrays.asList("RED", "grEEn", "white", "Orange", "pink");
+        List<String> lowerCaseStrings = colors.stream()
+                .map(String::toLowerCase)
+                .collect(Collectors.toList());
+        System.out.println(lowerCaseStrings);
     }
 }
